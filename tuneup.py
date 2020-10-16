@@ -5,7 +5,7 @@
 Use the timeit and cProfile libraries to find bad code.
 """
 
-__author__ = "Gabrielle"
+__author__ = "Gabrielle, Jasmyne"
 
 import cProfile
 import pstats
@@ -80,7 +80,7 @@ def timeit_helper(func_name, func_param):
     stmt = f"{func_name}('{func_param}')"
     setup = f"from {__name__} import {func_name}"
     t = timeit.Timer(stmt=stmt, setup=setup)
-    runs_per_repeat = 7
+    runs_per_repeat = 3
     num_repeats = 5
     result = t.repeat(repeat=num_repeats, number=runs_per_repeat)
     time_cost = min(result) / 3
